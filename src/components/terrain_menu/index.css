@@ -1,0 +1,27 @@
+#terrain-menu {
+  display: flex;
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0);
+  margin: 1.75rem 2.5rem;
+  color: white;
+  border-radius: 5px;
+  padding: 2.5rem;
+}
+
+ul#menu-item-list {
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.menu-item-list-item {
+  height: fit-content;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.menu-item-list-item:hover {
+  background-color: gray;
+}

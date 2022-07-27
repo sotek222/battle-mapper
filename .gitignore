@@ -1,0 +1,11 @@
+# Ignore ds store
+.DS_Store
+
+# Ignore node modules
+node_modules/
+
+# ignore npmrc
+.npmrc
+
+# ignore editor configuration file
+.editorconfig

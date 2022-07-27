@@ -1,0 +1,9 @@
+#battle-map-container {
+  position: relative;
+}
+
+#battle-map {
+  position: absolute;
+  top: 116px;
+  left: 93px;
+}
