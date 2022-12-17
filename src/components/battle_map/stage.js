@@ -1,5 +1,6 @@
 // Libraries
 import Konva from "konva";
+import html2canvas from "html2canvas";
 // Constants
 import { KEYS } from "../../utils/constants";
 
@@ -137,18 +138,21 @@ export default class Stage {
       }
     });
 
-    this.elem.querySelector("#save-map").addEventListener("click", () => {
-      function downloadURI(uri, name) {
-        let link = document.createElement("a");
-        link.download = name;
-        link.href = uri;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        link = null;
-      }
-      const dataURL = this.stage.toDataURL();
-      downloadURI(dataURL, "stage.png");
+    this.elem.querySelector("#save-map").addEventListener("click", (e) => {
+      const saveButton = document.getElementById("save-map");
+
+      saveButton.style.display = "none";
+
+      html2canvas(document.getElementById("battle-map-container")).then(
+        (canvas) => {
+          let a = document.createElement("a");
+          a.download = "ss.png";
+          a.href = canvas.toDataURL("image/png");
+          a.click();
+          a = null; // garbage collection
+          saveButton.style.display = "block";
+        }
+      );
     });
   }
 
